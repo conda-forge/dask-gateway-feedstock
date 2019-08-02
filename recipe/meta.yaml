@@ -1,5 +1,5 @@
 {% set name = "dask-gateway" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   version: {{ version }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jcrist/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 1ae59cc611fb4a7dd1210bdf82e1eef151d450f144ae66d1d478582cd9f95964
+  sha256: d1ad9d3cec088e93eefc48926fc61b1638781747f1d8fe832cd91771092cb0bd
   patches:
     - setup.py.patch
 
