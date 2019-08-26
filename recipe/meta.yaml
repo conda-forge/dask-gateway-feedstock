@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/jcrist/{{ name }}/archive/{{ version }}.tar.gz
   sha256: d1ad9d3cec088e93eefc48926fc61b1638781747f1d8fe832cd91771092cb0bd
-  patches:
-    - setup.py.patch
 
 build:
   number: 0
