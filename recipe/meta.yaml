@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jcrist/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: d1ad9d3cec088e93eefc48926fc61b1638781747f1d8fe832cd91771092cb0bd
+  sha256: f1bd048d7771af81504cda41ebddbf9c95e97f0b4980a769e69d76519c895ccc
 
 build:
   number: 0
