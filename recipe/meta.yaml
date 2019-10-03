@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dask/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: f1bd048d7771af81504cda41ebddbf9c95e97f0b4980a769e69d76519c895ccc
+  sha256: 0d109c5bb82c9b1abb1e24cedd499771100aa71a6121ac745f09ff9aef4a7676
 
 build:
   number: 0
