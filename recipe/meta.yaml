@@ -117,7 +117,7 @@ about:
   home: http://github.com/dask/dask-gateway
   license: New BSD
   license_family: BSD
-  license_file: dask-gateway/LICENSE
+  license_file: LICENSE
   summary: A multi-tenant server for securely deploying and managing Dask clusters.
   description: A multi-tenant server for securely deploying and managing Dask clusters.
   doc_url: https://gateway.dask.org
