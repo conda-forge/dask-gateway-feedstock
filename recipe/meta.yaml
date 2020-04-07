@@ -1,5 +1,5 @@
 {% set name = "dask-gateway" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.0" %}
 
 package:
   version: {{ version }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/dask/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 6a925b5c23358cfd4aeb47b31e6874cfa949d3cd8744774b52031415974279ec
+  sha256: 93d51c2a2ceb2c30753e5b32ad31cdc539c0e6b83cb55f293e79cd635aabde6b
 
 build:
   number: 0
-  skip: True  # [py<36]
+  skip: true  # [py<36]
   script: cd dask-gateway && python -m pip install . -vv --no-deps
   entry_points:
     - dask-gateway-scheduler = dask_gateway.dask_cli:scheduler
@@ -41,7 +41,7 @@ outputs:
 
   - name: dask-gateway-kerberos
     build:
-      skip: True  # [py<36]
+      skip: true  # [py<36]
     requirements:
       - python
       - {{ pin_subpackage('dask-gateway', exact=True) }}
@@ -58,7 +58,7 @@ outputs:
   - name: dask-gateway-server
     script: dask-gateway-server.sh
     build:
-      skip: True  # [py<36 or win]
+      skip: true  # [py<36 or win]
       entry_points:
         - dask-gateway-server = dask_gateway_server.app:main
         - dask-gateway-jobqueue-launcher = dask_gateway_server.managers.jobqueue.launcher:main
@@ -82,7 +82,7 @@ outputs:
 
   - name: dask-gateway-server-kerberos
     build:
-      skip: True  # [py<36 or win]
+      skip: true  # [py<36 or win]
     requirements:
       - python
       - {{ pin_subpackage('dask-gateway-server', exact=True) }}
@@ -93,7 +93,7 @@ outputs:
 
   - name: dask-gateway-server-kubernetes
     build:
-      skip: True  # [py<36 or win]
+      skip: true  # [py<36 or win]
     requirements:
       - python
       - {{ pin_subpackage('dask-gateway-server', exact=True) }}
@@ -104,7 +104,7 @@ outputs:
 
   - name: dask-gateway-server-yarn
     build:
-      skip: True  # [py<36 or win]
+      skip: true  # [py<36 or win]
     requirements:
       - python
       - {{ pin_subpackage('dask-gateway-server', exact=True) }}
