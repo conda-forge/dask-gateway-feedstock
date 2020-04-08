@@ -53,7 +53,8 @@ outputs:
 
     # Core package, required dependencies only
   - name: dask-gateway-server
-    script: cd dask-gateway-server && python -m pip install . -vv --no-deps
+    # XXX: conda-build requires a file here for some reason, can't inline script
+    script: build-dask-gateway-server.sh
     build:
       skip: True  # [py<36 or win]
       entry_points:
@@ -144,7 +145,7 @@ outputs:
 
 about:
   home: http://github.com/dask/dask-gateway
-  license: New BSD
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: A multi-tenant server for securely deploying and managing Dask clusters.
