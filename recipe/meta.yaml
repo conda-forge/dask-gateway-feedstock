@@ -1,5 +1,5 @@
 {% set name = "dask-gateway" %}
-{% set version = "0.9.0" %}
+{% set version = "2022.4.0" %}
 
 package:
   version: {{ version }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/dask/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: de99927a7f2e97f53b4c0ab7a784fc36ccf5dba22fb1cb15c5bd7d29e5fe1990
+  sha256: 3c79b1458e5c52f8b875332a75c034a62bb1563b650eac14f4e9cea1a217e6e6
 
 
 build:
-  number: 2
+  number: 0
   skip: true  # [py<36]
   script: cd dask-gateway && python -m pip install . -vv --no-deps
 
