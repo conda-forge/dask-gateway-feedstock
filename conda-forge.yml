@@ -7,7 +7,12 @@
 # be done by commenting "@conda-forge-admin, please rerender" in a PR.
 #
 provider:
-  win: azure
+  linux_64: azure
+  linux_aarch64: azure
+  osx_64: azure
+  win_64: none
+  linux_ppc64le: None
+build_with_mambabuild: true
 conda_forge_output_validation: true
 github:
   branch_name: main
