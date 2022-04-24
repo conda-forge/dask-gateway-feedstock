@@ -1,3 +1,11 @@
+# conda-forge.yml is configuration for the tool conda-smithy.
+#
+# conda-forge.yml reference:
+# https://conda-forge.org/docs/maintainer/conda_forge_yml.html
+#
+# Rerender the feedstock if you make changes to this file. This can for example
+# be done by commenting "@conda-forge-admin, please rerender" in a PR.
+#
 provider:
   win: azure
 conda_forge_output_validation: true
