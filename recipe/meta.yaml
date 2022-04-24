@@ -1,3 +1,8 @@
+# meta.yaml is configuration for the tool conda-build.
+#
+# meta.yaml reference:
+# https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html
+#
 {% set name = "dask-gateway" %}
 {% set version = "0.9.0" %}
 
@@ -150,5 +155,12 @@ about:
   dev_url: http://github.com/dask/dask-gateway
 
 extra:
+  # To add new maintainers, open an issue with a specific title as described in
+  # https://conda-forge.org/docs/maintainer/updating_pkgs.html#updating-the-maintainer-list
+  #
   recipe-maintainers:
+    - consideRatio
+    - jacobtomlinson
     - jcrist
+    - martindurant
+    - TomAugspurger
