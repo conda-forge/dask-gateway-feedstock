@@ -85,6 +85,94 @@ outputs:
         - which dask-gateway-jobqueue-launcher
 
 
+  # Client-side kerberos auth
+  - name: dask-gateway-kerberos
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+      run:
+        - {{ pin_subpackage('dask-gateway', exact=True) }}
+        - pykerberos  # [osx or linux]
+        - winkerberos  # [win]
+    test:
+      imports:
+        - dask_gateway
+
+
+  # Kerberos authentication
+  - name: dask-gateway-server-kerberos
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+      run:
+        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+        - pykerberos
+    test:
+      imports:
+        - dask_gateway_server
+
+  # Local backend
+  - name: dask-gateway-server-local
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+      run:
+        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+        - sqlalchemy
+    test:
+      imports:
+        - dask_gateway_server
+        - dask_gateway_server.backends.local
+
+  # Jobqueue backends
+  - name: dask-gateway-server-jobqueue
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+      run:
+        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+        - sqlalchemy
+    test:
+      imports:
+        - dask_gateway_server
+        - dask_gateway_server.backends.jobqueue.slurm
+        - dask_gateway_server.backends.jobqueue.pbs
+
+  # Hadoop YARN backend
+  - name: dask-gateway-server-yarn
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+      run:
+        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+        - sqlalchemy
+        - skein >=0.7.3
+    test:
+      imports:
+        - dask_gateway_server.backends.yarn
+
+  # Kubernetes backend
+  - name: dask-gateway-server-kubernetes
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+      run:
+        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+        - kubernetes_asyncio
+    test:
+      imports:
+        - dask_gateway_server.backends.kubernetes
+
+
+
 
 # Additional information
 # -----------------------------------------------------------------------------
