@@ -4,16 +4,30 @@
 # https://conda-forge.org/docs/maintainer/conda_forge_yml.html
 #
 # Rerender the feedstock if you make changes to this file. This can for example
-# be done by commenting "@conda-forge-admin, please rerender" in a PR.
+# be done by commenting "@conda-forge-admin, please rerender" in a PR or with:
+#
+#   conda-smithy rerender -c auto
+#
+
+# provider: https://conda-forge.org/docs/maintainer/conda_forge_yml.html#provider
+#
+# By declaring a CI provider for a given platforms, conda-smithy will render a
+# workflow script.
 #
 provider:
   linux_64: azure
   linux_aarch64: azure
   osx_64: azure
-  win_64: none
-  linux_ppc64le: None
+  # win_64 only relevant for dask-gateway-kerberos that has a dependency
+  # adjusted for windows specifically.
+  #
+  win_64: azure
+  linux_ppc64le: false
+
 build_with_mambabuild: true
+
 conda_forge_output_validation: true
+
 github:
   branch_name: main
   tooling_branch_name: main
