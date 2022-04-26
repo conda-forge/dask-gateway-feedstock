@@ -9,25 +9,20 @@
 #   conda-smithy rerender -c auto
 #
 
-# provider: https://conda-forge.org/docs/maintainer/conda_forge_yml.html#provider
-#
-# By declaring a CI provider for a given platforms, conda-smithy will render a
-# workflow script.
-#
-provider:
-  linux_64: azure
-  linux_aarch64: azure
-  osx_64: azure
-  # win_64 only relevant for dask-gateway-kerberos that has a dependency
-  # adjusted for windows specifically.
-  #
-  win_64: azure
-  linux_ppc64le: false
-
+# https://conda-forge.org/docs/maintainer/conda_forge_yml.html#build-with-mambabuild
 build_with_mambabuild: true
 
+# https://conda-forge.org/docs/maintainer/conda_forge_yml.html#conda-forge-output-validation
 conda_forge_output_validation: true
 
+# https://conda-forge.org/docs/maintainer/conda_forge_yml.html#github
 github:
   branch_name: main
   tooling_branch_name: main
+
+# https://conda-forge.org/docs/maintainer/conda_forge_yml.html#build-platform
+build_platform:
+  linux_64: linux_64
+  linux_aarch64: linux_64
+  osx_64: linux_64
+  osx_arm64: linux_64

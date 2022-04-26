@@ -26,33 +26,10 @@ build:
 # Specific configuration for outputs beyond the common configuration above
 # -----------------------------------------------------------------------------
 outputs:
-  - name: dask-gateway
-    build:
-      noarch: python
-      script: >-
-        cd dask-gateway &&
-        python -m pip install . -vv --no-deps
-    requirements:
-      host:
-        - python >=3.8
-        - pip
-      run:
-        - python >=3.8
-        # Requirements below should match content of requirements.txt:
-        # https://github.com/dask/dask-gateway/blob/main/dask-gateway/requirements.txt
-        #
-        - aiohttp
-        - click
-        - dask >=2.2.0
-        - distributed >=2021.01.1
-        - pyyaml
-        - tornado
-    test:
-      imports:
-        - dask_gateway
-
+  # core package: server
   - name: dask-gateway-server
     build:
+      noarch: python
       script: >-
         cd dask-gateway-server &&
         python -m pip install . -vv --no-deps
@@ -84,6 +61,32 @@ outputs:
         - dask-gateway-server --help
         - which dask-gateway-jobqueue-launcher
 
+
+  # core package: client
+  - name: dask-gateway
+    build:
+      noarch: python
+      script: >-
+        cd dask-gateway &&
+        python -m pip install . -vv --no-deps
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+      run:
+        - python >=3.8
+        # Requirements below should match content of requirements.txt:
+        # https://github.com/dask/dask-gateway/blob/main/dask-gateway/requirements.txt
+        #
+        - aiohttp
+        - click
+        - dask >=2.2.0
+        - distributed >=2021.01.1
+        - pyyaml
+        - tornado
+    test:
+      imports:
+        - dask_gateway
 
 
 
