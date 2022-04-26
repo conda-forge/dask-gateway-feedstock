@@ -53,8 +53,6 @@ outputs:
 
   - name: dask-gateway-server
     build:
-      noarch: generic
-      skip: true  # [win]
       script: >-
         cd dask-gateway-server &&
         python -m pip install . -vv --no-deps
@@ -87,32 +85,19 @@ outputs:
         - which dask-gateway-jobqueue-launcher
 
 
+
+
   # client: kerberos authentication
-  - name: dask-gateway-kerberos
-    build:
-      noarch: generic
-    requirements:
-      host:
-        - python >=3.8
-        - pip
-      run:
-        - {{ pin_subpackage('dask-gateway', exact=True) }}
-        - pykerberos  # [osx or linux]
-        - winkerberos  # [win]
-    test:
-      imports:
-        - dask_gateway
+  #
+  # FIXME: currently removed to reduce complexity
+  #
 
 
   # server: kerberos authentication
   - name: dask-gateway-server-kerberos
     build:
-      noarch: generic
-      skip: true  # [win]
+      noarch: python
     requirements:
-      host:
-        - python >=3.8
-        - pip
       run:
         - {{ pin_subpackage('dask-gateway-server', exact=True) }}
         - pykerberos
@@ -123,12 +108,8 @@ outputs:
   # server: local backend
   - name: dask-gateway-server-local
     build:
-      noarch: generic
-      skip: true  # [win]
+      noarch: python
     requirements:
-      host:
-        - python >=3.8
-        - pip
       run:
         - {{ pin_subpackage('dask-gateway-server', exact=True) }}
         - sqlalchemy
@@ -140,12 +121,8 @@ outputs:
   # server: jobqueue backends
   - name: dask-gateway-server-jobqueue
     build:
-      noarch: generic
-      skip: true  # [win]
+      noarch: python
     requirements:
-      host:
-        - python >=3.8
-        - pip
       run:
         - {{ pin_subpackage('dask-gateway-server', exact=True) }}
         - sqlalchemy
@@ -158,12 +135,8 @@ outputs:
   # server: hadoop yarn backend
   - name: dask-gateway-server-yarn
     build:
-      noarch: generic
-      skip: true  # [win]
+      noarch: python
     requirements:
-      host:
-        - python >=3.8
-        - pip
       run:
         - {{ pin_subpackage('dask-gateway-server', exact=True) }}
         - sqlalchemy
@@ -175,12 +148,8 @@ outputs:
   # server: kubernetes backend
   - name: dask-gateway-server-kubernetes
     build:
-      noarch: generic
-      skip: true  # [win]
+      noarch: python
     requirements:
-      host:
-        - python >=3.8
-        - pip
       run:
         - {{ pin_subpackage('dask-gateway-server', exact=True) }}
         - kubernetes_asyncio

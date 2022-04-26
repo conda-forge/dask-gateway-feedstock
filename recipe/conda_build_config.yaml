@@ -1,0 +1,34 @@
+# conda_build_config.yaml is configuration for conda-build and detected by if
+# named like that next to meta.yaml. conda-build can also be provided this
+# explicitly via a flag documented like this.
+#
+#  --variant-config-files VARIANT_CONFIG_FILES
+#
+#     Additional variant config files to add. These yaml files can contain keys
+#     such as `c_compiler` and `target_platform` to form a build matrix.
+#
+# Read more about this "variant config file" in
+# https://docs.conda.io/projects/conda-build/en/latest/resources/variants.html.
+#
+
+# The configuration below comes from
+# https://github.com/conda-forge/dask-gateway-feedstock/issues/27#issuecomment-1108925951
+# and includes several 
+#
+MACOSX_DEPLOYMENT_TARGET:  # [osx]
+  - 11.0                   # [osx and arm64]
+  - 10.15                  # [osx and x86_64]
+go_compiler:
+  - go-nocgo
+cgo_compiler:
+  - go-cgo
+target_goos:
+  - linux                      # [linux]
+  - darwin                     # [osx]
+target_goarch:
+  - amd64                      # [x86_64]
+  - arm64                      # [arm64]
+target_goexe:
+  -                            # [unix]
+target_gobin:
+  - '${PREFIX}/bin/'           # [unix]
