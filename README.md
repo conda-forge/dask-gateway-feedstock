@@ -40,17 +40,45 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64</td>
+              <td>linux_aarch64_python3.10</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7275&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dask-gateway-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dask-gateway-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_python3.10" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64</td>
+              <td>linux_aarch64_python3.8</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7275&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dask-gateway-feedstock?branchName=main&jobName=osx&configuration=osx_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dask-gateway-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_python3.8" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_python3.9</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7275&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dask-gateway-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_python3.9" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.10</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7275&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dask-gateway-feedstock?branchName=main&jobName=osx&configuration=osx_64_python3.10" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.8</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7275&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dask-gateway-feedstock?branchName=main&jobName=osx&configuration=osx_64_python3.8" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.9</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7275&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dask-gateway-feedstock?branchName=main&jobName=osx&configuration=osx_64_python3.9" alt="variant">
                 </a>
               </td>
             </tr><tr>
