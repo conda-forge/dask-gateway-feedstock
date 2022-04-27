@@ -8,5 +8,16 @@ docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 go_compiler:
 - go-nocgo
-target_platform:
-- linux-aarch64
+target_goarch:
+- amd64
+- arm64
+- amd64
+- arm64
+target_goos:
+- darwin
+- darwin
+- linux
+- linux
+zip_keys:
+- - target_goos
+  - target_goarch
