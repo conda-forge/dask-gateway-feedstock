@@ -29,11 +29,11 @@ target_goarch:
   - arm64
   - amd64
   - arm64
-# target_platform:
-#   - linux-64
-#   - linux-aarch64
-#   - osx-64
-#   - osx-arm64
+target_platform:
+  - linux-64
+  - linux-aarch64
+  - osx-64
+  - osx-arm64
 
 # zip_keys is documented well in
 # https://docs.conda.io/projects/conda-build/en/latest/resources/variants.html#coupling-keys.
@@ -46,4 +46,4 @@ target_goarch:
 zip_keys:
   - target_goos
   - target_goarch
-  # - target_platform
+  - target_platform
