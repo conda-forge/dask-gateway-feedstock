@@ -34,10 +34,10 @@
 #          generate variations, but how do we make those variations be
 #          associated with a platform?
 #
-
-For some reason, target_platform behaves a bit differently. I hoped
+#          For some reason, target_platform behaves a bit differently. I hoped
 #          to use it to indicate that the conda-forge build should be meant for
 #          a specific platform.
+#
 
 
 
