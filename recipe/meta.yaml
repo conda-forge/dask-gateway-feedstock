@@ -41,8 +41,7 @@ outputs:
         - dask-gateway-jobqueue-launcher = dask_gateway_server.backends.jobqueue.launcher:main
     requirements:
       build:
-        - {{ compiler('go') }}
-        - cross-python_{{ target_platform }} # [build_platform != target_platform]
+        - {{ compiler('go') }} {{ target_goos }} {{ target_goarch }}
       host:
         - python >=3.8
         - pip
