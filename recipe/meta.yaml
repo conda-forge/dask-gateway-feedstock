@@ -118,69 +118,69 @@ outputs:
   #     imports:
   #       - dask_gateway
 
-  # server: kerberos authentication
-  - name: dask-gateway-server-kerberos
-    build:
-      noarch: python
-    requirements:
-      run:
-        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
-        - pykerberos
-    test:
-      imports:
-        - dask_gateway_server
+  # # server: kerberos authentication
+  # - name: dask-gateway-server-kerberos
+  #   build:
+  #     noarch: python
+  #   requirements:
+  #     run:
+  #       - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+  #       - pykerberos
+  #   test:
+  #     imports:
+  #       - dask_gateway_server
 
-  # server: local backend
-  - name: dask-gateway-server-local
-    build:
-      noarch: python
-    requirements:
-      run:
-        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
-        - sqlalchemy
-    test:
-      imports:
-        - dask_gateway_server
-        - dask_gateway_server.backends.local
+  # # server: local backend
+  # - name: dask-gateway-server-local
+  #   build:
+  #     noarch: python
+  #   requirements:
+  #     run:
+  #       - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+  #       - sqlalchemy
+  #   test:
+  #     imports:
+  #       - dask_gateway_server
+  #       - dask_gateway_server.backends.local
 
-  # server: jobqueue backends
-  - name: dask-gateway-server-jobqueue
-    build:
-      noarch: python
-    requirements:
-      run:
-        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
-        - sqlalchemy
-    test:
-      imports:
-        - dask_gateway_server
-        - dask_gateway_server.backends.jobqueue.slurm
-        - dask_gateway_server.backends.jobqueue.pbs
+  # # server: jobqueue backends
+  # - name: dask-gateway-server-jobqueue
+  #   build:
+  #     noarch: python
+  #   requirements:
+  #     run:
+  #       - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+  #       - sqlalchemy
+  #   test:
+  #     imports:
+  #       - dask_gateway_server
+  #       - dask_gateway_server.backends.jobqueue.slurm
+  #       - dask_gateway_server.backends.jobqueue.pbs
 
-  # server: hadoop yarn backend
-  - name: dask-gateway-server-yarn
-    build:
-      noarch: python
-    requirements:
-      run:
-        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
-        - sqlalchemy
-        - skein >=0.7.3
-    test:
-      imports:
-        - dask_gateway_server.backends.yarn
+  # # server: hadoop yarn backend
+  # - name: dask-gateway-server-yarn
+  #   build:
+  #     noarch: python
+  #   requirements:
+  #     run:
+  #       - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+  #       - sqlalchemy
+  #       - skein >=0.7.3
+  #   test:
+  #     imports:
+  #       - dask_gateway_server.backends.yarn
 
-  # server: kubernetes backend
-  - name: dask-gateway-server-kubernetes
-    build:
-      noarch: python
-    requirements:
-      run:
-        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
-        - kubernetes_asyncio
-    test:
-      imports:
-        - dask_gateway_server.backends.kubernetes
+  # # server: kubernetes backend
+  # - name: dask-gateway-server-kubernetes
+  #   build:
+  #     noarch: python
+  #   requirements:
+  #     run:
+  #       - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+  #       - kubernetes_asyncio
+  #   test:
+  #     imports:
+  #       - dask_gateway_server.backends.kubernetes
 
 
 
