@@ -29,10 +29,10 @@ github:
 build_platform:
   # target_platform: build_platform
   linux_64: linux_64
-  linux_aarch64: linux_aarch64
-  osx_64: osx_64
-  osx_arm64: osx_64
-  win_64: win_64
+  linux_aarch64: linux_64
+  osx_64: linux_64
+  osx_arm64: linux_64
+  win_64: linux_64
 
 # provider for linux_aarch64 has to be set explicitly as it otherwise defaults
 # to no provider.
@@ -46,4 +46,4 @@ provider:
   win_64: azure
   linux_aarch64: azure
 
-test: native_and_emulated
+test: native
