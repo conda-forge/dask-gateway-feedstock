@@ -41,6 +41,9 @@ outputs:
         - dask-gateway-jobqueue-launcher = dask_gateway_server.backends.jobqueue.launcher:main
     requirements:
       build:
+        # This jinja function will expand to go_compiler and target_platform,
+        # which then makes the build requirements change, which matters with
+        # regards to the variations for this to be considered separate.
         - {{ compiler('go') }}
       host:
         - python >=3.8

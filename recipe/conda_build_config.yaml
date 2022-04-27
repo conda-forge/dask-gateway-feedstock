@@ -13,7 +13,7 @@
 
 # The configuration below comes from
 # https://github.com/conda-forge/dask-gateway-feedstock/issues/27#issuecomment-1108925951
-# and includes several 
+# and includes several
 #
 go_compiler:
   - go-nocgo
@@ -30,10 +30,10 @@ target_goarch:
   - amd64
   - arm64
 target_platform:
-  - linux_64
-  - linux_aarch64
-  - osx_64
-  - osx_arm64
+  - linux-64
+  - linux-aarch64
+  - osx-64
+  - osx-arm64
 
 # zip_keys is documented well in
 # https://docs.conda.io/projects/conda-build/en/latest/resources/variants.html#coupling-keys.
