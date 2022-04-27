@@ -43,7 +43,6 @@ outputs:
       # dask-gateway-server don't support windows, dask-gateway does
       #
       skip: true  # [target_platform == 'win-64']
-      skip: true  # [py<38]
       # script_env use target_goos and target_goarch, which comes in 2x2
       # combinations, so this output will be emitted four times. For more
       # details see the note about "build hash" in
@@ -76,7 +75,7 @@ outputs:
         #
         - {{ compiler('go') }}
       host:
-        - python {{ python }}
+        - python >=3.8
         - pip
       run:
         - python >=3.8
@@ -127,7 +126,7 @@ outputs:
   - name: dask-gateway-kerberos
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway', max_pin='x.x.x') }}
+        - dask-gateway =={{ version }}
         - pykerberos  # [target_platform != 'win-64']
         - winkerberos  # [target_platform == 'win-64']
     test:
@@ -140,7 +139,7 @@ outputs:
       skip: true  # [target_platform == 'win-64']
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', max_pin='x.x.x') }}
+        - dask-gateway-server =={{ version }}
         - pykerberos
     test:
       imports:
@@ -152,7 +151,7 @@ outputs:
       skip: true  # [target_platform == 'win-64']
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', max_pin='x.x.x') }}
+        - dask-gateway-server =={{ version }}
         - sqlalchemy
     test:
       imports:
@@ -165,7 +164,7 @@ outputs:
       skip: true  # [target_platform == 'win-64']
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', max_pin='x.x.x') }}
+        - dask-gateway-server =={{ version }}
         - sqlalchemy
     test:
       imports:
@@ -179,7 +178,7 @@ outputs:
       skip: true  # [target_platform == 'win-64']
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', max_pin='x.x.x') }}
+        - dask-gateway-server =={{ version }}
         - sqlalchemy
         - skein >=0.7.3
     test:
@@ -192,7 +191,7 @@ outputs:
       skip: true  # [target_platform == 'win-64']
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', max_pin='x.x.x') }}
+        - dask-gateway-server =={{ version }}
         - kubernetes_asyncio
     test:
       imports:

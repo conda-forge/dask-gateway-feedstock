@@ -38,7 +38,5 @@
 #          to use it to indicate that the conda-forge build should be meant for
 #          a specific platform.
 #
-# python:
-#   - "3.8"
-#   - "3.9"
-#   - "3.10"
+ignore_version:
+  - python
