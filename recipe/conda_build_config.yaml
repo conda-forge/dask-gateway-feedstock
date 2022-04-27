@@ -17,8 +17,6 @@
 #
 go_compiler:
   - go-nocgo
-cgo_compiler:
-  - go-cgo
 target_gobin:
   - ${PREFIX}/bin/
 target_goos:

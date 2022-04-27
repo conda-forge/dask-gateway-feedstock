@@ -35,11 +35,6 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-dask--gateway-green.svg)](https://anaconda.org/conda-forge/dask-gateway) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dask-gateway.svg)](https://anaconda.org/conda-forge/dask-gateway) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dask-gateway.svg)](https://anaconda.org/conda-forge/dask-gateway) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dask-gateway.svg)](https://anaconda.org/conda-forge/dask-gateway) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-dask--gateway--server-green.svg)](https://anaconda.org/conda-forge/dask-gateway-server) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dask-gateway-server.svg)](https://anaconda.org/conda-forge/dask-gateway-server) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dask-gateway-server.svg)](https://anaconda.org/conda-forge/dask-gateway-server) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dask-gateway-server.svg)](https://anaconda.org/conda-forge/dask-gateway-server) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-dask--gateway--server--jobqueue-green.svg)](https://anaconda.org/conda-forge/dask-gateway-server-jobqueue) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dask-gateway-server-jobqueue.svg)](https://anaconda.org/conda-forge/dask-gateway-server-jobqueue) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dask-gateway-server-jobqueue.svg)](https://anaconda.org/conda-forge/dask-gateway-server-jobqueue) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dask-gateway-server-jobqueue.svg)](https://anaconda.org/conda-forge/dask-gateway-server-jobqueue) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-dask--gateway--server--kerberos-green.svg)](https://anaconda.org/conda-forge/dask-gateway-server-kerberos) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dask-gateway-server-kerberos.svg)](https://anaconda.org/conda-forge/dask-gateway-server-kerberos) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dask-gateway-server-kerberos.svg)](https://anaconda.org/conda-forge/dask-gateway-server-kerberos) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dask-gateway-server-kerberos.svg)](https://anaconda.org/conda-forge/dask-gateway-server-kerberos) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-dask--gateway--server--kubernetes-green.svg)](https://anaconda.org/conda-forge/dask-gateway-server-kubernetes) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dask-gateway-server-kubernetes.svg)](https://anaconda.org/conda-forge/dask-gateway-server-kubernetes) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dask-gateway-server-kubernetes.svg)](https://anaconda.org/conda-forge/dask-gateway-server-kubernetes) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dask-gateway-server-kubernetes.svg)](https://anaconda.org/conda-forge/dask-gateway-server-kubernetes) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-dask--gateway--server--local-green.svg)](https://anaconda.org/conda-forge/dask-gateway-server-local) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dask-gateway-server-local.svg)](https://anaconda.org/conda-forge/dask-gateway-server-local) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dask-gateway-server-local.svg)](https://anaconda.org/conda-forge/dask-gateway-server-local) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dask-gateway-server-local.svg)](https://anaconda.org/conda-forge/dask-gateway-server-local) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-dask--gateway--server--yarn-green.svg)](https://anaconda.org/conda-forge/dask-gateway-server-yarn) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dask-gateway-server-yarn.svg)](https://anaconda.org/conda-forge/dask-gateway-server-yarn) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dask-gateway-server-yarn.svg)](https://anaconda.org/conda-forge/dask-gateway-server-yarn) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dask-gateway-server-yarn.svg)](https://anaconda.org/conda-forge/dask-gateway-server-yarn) |
 
 Installing dask-gateway
 =======================
@@ -51,16 +46,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `dask-gateway, dask-gateway-server, dask-gateway-server-jobqueue, dask-gateway-server-kerberos, dask-gateway-server-kubernetes, dask-gateway-server-local, dask-gateway-server-yarn` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `dask-gateway, dask-gateway-server` can be installed with `conda`:
 
 ```
-conda install dask-gateway dask-gateway-server dask-gateway-server-jobqueue dask-gateway-server-kerberos dask-gateway-server-kubernetes dask-gateway-server-local dask-gateway-server-yarn
+conda install dask-gateway dask-gateway-server
 ```
 
 or with `mamba`:
 
 ```
-mamba install dask-gateway dask-gateway-server dask-gateway-server-jobqueue dask-gateway-server-kerberos dask-gateway-server-kubernetes dask-gateway-server-local dask-gateway-server-yarn
+mamba install dask-gateway dask-gateway-server
 ```
 
 It is possible to list all of the versions of `dask-gateway` available on your platform with `conda`:
