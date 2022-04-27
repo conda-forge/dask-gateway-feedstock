@@ -11,13 +11,3 @@ go_compiler:
 target_goarch:
 - amd64
 - arm64
-- amd64
-- arm64
-target_goos:
-- darwin
-- darwin
-- linux
-- linux
-zip_keys:
-- - target_goos
-  - target_goarch
