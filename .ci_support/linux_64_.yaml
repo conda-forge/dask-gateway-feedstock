@@ -18,8 +18,6 @@ target_goos:
 - darwin
 - linux
 - linux
-target_platform:
-- linux-64
 zip_keys:
 - - target_goos
   - target_goarch
