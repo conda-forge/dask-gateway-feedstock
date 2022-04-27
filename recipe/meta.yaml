@@ -50,10 +50,10 @@ outputs:
       # https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-section.
       #
       script_env:
-        - GOOS=linux [target_platform == 'linux-64' or target_platform == 'linux-aarch64']
-        - GOOS=darwin [target_platform == 'osx-64' or target_platform == 'osx-arm64']
-        - GOARCH=amd64 [target_platform == 'linux-64' or target_platform == 'osx-64']
-        - GOARCH=arm64 [target_platform == 'linux-aarch64' or target_platform == 'osx-arm64']
+        - GOOS=linux  # [target_platform == 'linux-64' or target_platform == 'linux-aarch64']
+        - GOOS=darwin  # [target_platform == 'osx-64' or target_platform == 'osx-arm64']
+        - GOARCH=amd64  # [target_platform == 'linux-64' or target_platform == 'osx-64']
+        - GOARCH=arm64  # [target_platform == 'linux-aarch64' or target_platform == 'osx-arm64']
       script: >-
         echo GOOS=$GOOS &&
         echo GOARCH=$GOARCH &&
