@@ -40,15 +40,19 @@ outputs:
   # core package: server
   - name: dask-gateway-server
     build:
-      noarch: python
+      # dask-gateway-server don't support windows, dask-gateway does
+      #
+      skip: true  # [target_platform == 'win-64']
       # script_env use target_goos and target_goarch, which comes in 2x2
       # combinations, so this output will be emitted four times. For more
       # details see the note about "build hash" in
       # https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-section.
       #
       script_env:
-        - GOOS={{ target_goos }}
-        - GOARCH={{ target_goarch }}
+        - GOOS=linux [target_platform == 'linux-64' or target_platform == 'linux-aarch64']
+        - GOOS=darwin [target_platform == 'osx-64' or target_platform == 'osx-arm64']
+        - GOARCH=amd64 [target_platform == 'linux-64' or target_platform == 'osx-64']
+        - GOARCH=arm64 [target_platform == 'linux-aarch64' or target_platform == 'osx-arm64']
       script: >-
         cd dask-gateway-server &&
         python -m pip install . -vv --no-deps
@@ -118,13 +122,11 @@ outputs:
 
   # client: kerberos authentication
   - name: dask-gateway-kerberos
-    build:
-      noarch: python
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway', exact=True) }}
-        - pykerberos  # [osx or linux]
-        - winkerberos  # [win]
+        - {{ pin_subpackage('dask-gateway', min_pin='x.x.x', max_pin='x.x.x') }}
+        - pykerberos  # [target_platform != 'win-64']
+        - winkerberos  # [target_platform == 'win-64']
     test:
       imports:
         - dask_gateway
@@ -132,7 +134,7 @@ outputs:
   # server: kerberos authentication
   - name: dask-gateway-server-kerberos
     build:
-      noarch: python
+      skip: true  # [target_platform == 'win-64']
     requirements:
       run:
         - {{ pin_subpackage('dask-gateway-server', min_pin='x.x.x', max_pin='x.x.x') }}
@@ -144,7 +146,7 @@ outputs:
   # server: local backend
   - name: dask-gateway-server-local
     build:
-      noarch: python
+      skip: true  # [target_platform == 'win-64']
     requirements:
       run:
         - {{ pin_subpackage('dask-gateway-server', min_pin='x.x.x', max_pin='x.x.x') }}
@@ -157,7 +159,7 @@ outputs:
   # server: jobqueue backends
   - name: dask-gateway-server-jobqueue
     build:
-      noarch: python
+      skip: true  # [target_platform == 'win-64']
     requirements:
       run:
         - {{ pin_subpackage('dask-gateway-server', min_pin='x.x.x', max_pin='x.x.x') }}
@@ -171,7 +173,7 @@ outputs:
   # server: hadoop yarn backend
   - name: dask-gateway-server-yarn
     build:
-      noarch: python
+      skip: true  # [target_platform == 'win-64']
     requirements:
       run:
         - {{ pin_subpackage('dask-gateway-server', min_pin='x.x.x', max_pin='x.x.x') }}
@@ -184,7 +186,7 @@ outputs:
   # server: kubernetes backend
   - name: dask-gateway-server-kubernetes
     build:
-      noarch: python
+      skip: true  # [target_platform == 'win-64']
     requirements:
       run:
         - {{ pin_subpackage('dask-gateway-server', min_pin='x.x.x', max_pin='x.x.x') }}

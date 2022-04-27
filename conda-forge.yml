@@ -21,8 +21,29 @@ github:
   tooling_branch_name: main
 
 # https://conda-forge.org/docs/maintainer/conda_forge_yml.html#build-platform
+#
+# Let's work from a linux-64 build_platform to do most things, but for
+# dask-gateway-kerberos we will end up installing runtime dependencies for
+# windows which must be done on a windows machine.
+#
 build_platform:
+  # target_platform: build_platform
   linux_64: linux_64
-  linux_aarch64: linux_64
-  osx_64: linux_64
-  osx_arm64: linux_64
+  linux_aarch64: linux_aarch64
+  osx_64: osx_64
+  osx_arm64: osx_64
+  win_64: win_64
+
+# provider for linux_aarch64 has to be set explicitly as it otherwise defaults
+# to no provider.
+#
+# https://conda-forge.org/docs/maintainer/conda_forge_yml.html#provider
+#
+provider:
+  linux_64: azure
+  osx_64: azure
+  # osx_arm64 CI workers aren't available, yet!
+  win_64: azure
+  linux_aarch64: azure
+
+test: native_and_emulated
