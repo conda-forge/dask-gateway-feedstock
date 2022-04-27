@@ -30,12 +30,12 @@ outputs:
   - name: dask-gateway-server
     build:
       noarch: python
+      # script_env use target_goos and target_goarch, which comes in 2x2
+      # combinations, so this output will be emitted four times. For more
+      # details see the note about "build hash" in
+      # https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-section.
+      #
       script_env:
-        # Because target_goos and target_goarch is "used" here and come in 2x2
-        # combinations, this output will be emitted four times. For more details
-        # see the note about "build hash" in
-        # https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-section.
-        #
         - GOOS={{ target_goos }}
         - GOARCH={{ target_goarch }}
       script: >-
