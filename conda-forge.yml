@@ -27,22 +27,23 @@ github:
 build_platform:
   # target_platform: build_platform
   linux_64: linux_64
-  linux_aarch64: linux_64
-  osx_64: linux_64
-  osx_arm64: linux_64
-  win_64: linux_64
+  linux_aarch64: linux_aarch64
+  osx_64: osx_64
+  # osx_arm64: 
+  win_64: win_64
 
 # provider for linux_aarch64 has to be set explicitly as it otherwise defaults
 # to no provider.
 #
 # https://conda-forge.org/docs/maintainer/conda_forge_yml.html#provider
 #
+#
 provider:
   # build_platform: provider of ci workers
-  linux_64: azure
-  osx_64: azure
-  # osx_arm64 CI workers aren't available, yet!
-  win_64: azure
-  linux_aarch64: azure
+  linux_64: default
+  linux_aarch64: default
+  osx_64: default
+  # osx_arm64 isn't available
+  win_64: default
 
 test: native
