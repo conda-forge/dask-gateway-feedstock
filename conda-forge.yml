@@ -22,9 +22,7 @@ github:
 
 # https://conda-forge.org/docs/maintainer/conda_forge_yml.html#build-platform
 #
-# Let's work from a linux-64 build_platform to do most things, but for
-# dask-gateway-kerberos we will end up installing runtime dependencies for
-# windows which must be done on a windows machine.
+# While we could cross compile 
 #
 build_platform:
   # target_platform: build_platform
@@ -40,6 +38,7 @@ build_platform:
 # https://conda-forge.org/docs/maintainer/conda_forge_yml.html#provider
 #
 provider:
+  # build_platform: provider of ci workers
   linux_64: azure
   osx_64: azure
   # osx_arm64 CI workers aren't available, yet!

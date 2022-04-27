@@ -73,7 +73,7 @@ outputs:
         #
         - {{ compiler('go') }}
       host:
-        - python >=3.8
+        - cross-python_{{ target_platform }}
         - pip
       run:
         - python >=3.8
@@ -101,7 +101,7 @@ outputs:
         python -m pip install . -vv --no-deps
     requirements:
       host:
-        - python >=3.8
+        - cross_python >=3.8
         - pip
       run:
         - python >=3.8
