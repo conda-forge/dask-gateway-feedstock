@@ -53,6 +53,9 @@ outputs:
         # which then makes the build requirements change, which matters with
         # regards to the variations for this to be considered separate.
         #
+        # For details about compiler(), see
+        # https://docs.conda.io/projects/conda-build/en/latest/resources/variants.html#extra-jinja2.
+        #
         - {{ compiler('go') }}
       host:
         - python >=3.8
@@ -102,21 +105,17 @@ outputs:
 
 
 
-  # FIXME: currently removed to reduce complexity
-  # ---------------------------------------------
-
   # client: kerberos authentication
   - name: dask-gateway-kerberos
     build:
-      noarch: generic
+      noarch: python
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway', exact=True) }}
+        - {{ pin_subpackage('dask-gateway', max_pin='x.x.x') }}
         - pykerberos  # [osx or linux]
         - winkerberos  # [win]
     test:
-      imports:
-        - dask_gateway
+      imports: [dask_gateway]
 
   # server: kerberos authentication
   - name: dask-gateway-server-kerberos
@@ -124,11 +123,10 @@ outputs:
       noarch: python
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+        - {{ pin_subpackage('dask-gateway-server', max_pin='x.x.x') }}
         - pykerberos
     test:
-      imports:
-        - dask_gateway_server
+      imports: [dask_gateway_server]
 
   # server: local backend
   - name: dask-gateway-server-local
@@ -136,7 +134,7 @@ outputs:
       noarch: python
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+        - {{ pin_subpackage('dask-gateway-server', max_pin='x.x.x') }}
         - sqlalchemy
     test:
       imports:
@@ -149,7 +147,7 @@ outputs:
       noarch: python
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+        - {{ pin_subpackage('dask-gateway-server', max_pin='x.x.x') }}
         - sqlalchemy
     test:
       imports:
@@ -163,7 +161,7 @@ outputs:
       noarch: python
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+        - {{ pin_subpackage('dask-gateway-server', max_pin='x.x.x') }}
         - sqlalchemy
         - skein >=0.7.3
     test:
@@ -176,7 +174,7 @@ outputs:
       noarch: python
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
+        - {{ pin_subpackage('dask-gateway-server', max_pin='x.x.x') }}
         - kubernetes_asyncio
     test:
       imports:

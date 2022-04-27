@@ -6,7 +6,7 @@
 # Rerender the feedstock if you make changes to this file. This can for example
 # be done by commenting "@conda-forge-admin, please rerender" in a PR or with:
 #
-#   conda-smithy rerender -c auto
+#   conda-smithy rerender --commit auto
 #
 
 # https://conda-forge.org/docs/maintainer/conda_forge_yml.html#build-with-mambabuild
