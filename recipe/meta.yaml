@@ -124,7 +124,7 @@ outputs:
   - name: dask-gateway-kerberos
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway', min_pin='x.x.x', max_pin='x.x.x') }}
+        - {{ pin_subpackage('dask-gateway', exact=True) }}
         - pykerberos  # [target_platform != 'win-64']
         - winkerberos  # [target_platform == 'win-64']
     test:
@@ -137,7 +137,7 @@ outputs:
       skip: true  # [target_platform == 'win-64']
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', min_pin='x.x.x', max_pin='x.x.x') }}
+        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
         - pykerberos
     test:
       imports:
@@ -149,7 +149,7 @@ outputs:
       skip: true  # [target_platform == 'win-64']
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', min_pin='x.x.x', max_pin='x.x.x') }}
+        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
         - sqlalchemy
     test:
       imports:
@@ -162,7 +162,7 @@ outputs:
       skip: true  # [target_platform == 'win-64']
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', min_pin='x.x.x', max_pin='x.x.x') }}
+        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
         - sqlalchemy
     test:
       imports:
@@ -176,7 +176,7 @@ outputs:
       skip: true  # [target_platform == 'win-64']
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', min_pin='x.x.x', max_pin='x.x.x') }}
+        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
         - sqlalchemy
         - skein >=0.7.3
     test:
@@ -189,7 +189,7 @@ outputs:
       skip: true  # [target_platform == 'win-64']
     requirements:
       run:
-        - {{ pin_subpackage('dask-gateway-server', min_pin='x.x.x', max_pin='x.x.x') }}
+        - {{ pin_subpackage('dask-gateway-server', exact=True) }}
         - kubernetes_asyncio
     test:
       imports:
