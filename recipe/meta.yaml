@@ -3,6 +3,17 @@
 # meta.yaml reference:
 # https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html
 #
+# Overall this configuration is tricky to understand, but here are some notes
+# that can be helpful.
+#
+# - This file is influenced by variables set in conda_build_variants.yaml, such
+#   as target_goos and target_goarch. Reading the documentation about that in
+#   its entirety was essential to set this up.
+#
+# - This file is influenced by special helper functions, such as compiler() and
+#   pin_subpackage(), for details about those see:
+#   https://docs.conda.io/projects/conda-build/en/latest/resources/variants.html#extra-jinja2-functions.https://docs.conda.io/projects/conda-build/en/latest/resources/variants.html#extra-jinja2-functions
+#
 {% set name = "dask-gateway" %}
 {% set version = "2022.4.0" %}
 
