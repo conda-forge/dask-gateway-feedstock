@@ -30,6 +30,9 @@ outputs:
   - name: dask-gateway-server
     build:
       noarch: python
+      script_env:
+        - GOOS={{ target_goos }}
+        - GOARCH={{ target_goarch }}
       script: >-
         cd dask-gateway-server &&
         python -m pip install . -vv --no-deps
