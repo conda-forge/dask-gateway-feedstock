@@ -9,15 +9,12 @@ docker_image:
 go_compiler:
 - go-nocgo
 target_goarch:
-- amd64
-- arm64
-- amd64
 - arm64
 target_goos:
-- darwin
-- darwin
 - linux
-- linux
+target_platform:
+- linux-aarch64
 zip_keys:
 - - target_goos
   - target_goarch
+  - target_platform
