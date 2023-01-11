@@ -230,6 +230,3 @@ Feedstock Maintainers
 * [@jcrist](https://github.com/jcrist/)
 * [@martindurant](https://github.com/martindurant/)
 
-
-<!-- dummy commit to enable rerendering -->
-
