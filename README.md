@@ -1,11 +1,11 @@
-About dask-gateway
-==================
+About dask-gateway-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dask-gateway-feedstock/blob/main/LICENSE.txt)
 
 Home: http://github.com/dask/dask-gateway
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dask-gateway-feedstock/blob/main/LICENSE.txt)
 
 Summary: A multi-tenant server for securely deploying and managing Dask clusters.
 
