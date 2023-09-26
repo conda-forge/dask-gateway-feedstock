@@ -4,7 +4,7 @@
 # https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html
 #
 {% set name = "dask-gateway" %}
-{% set version = "2023.1.1" %}
+{% set version = "2023.9.0" %}
 
 
 
@@ -16,7 +16,7 @@ package:
 
 source:
   url: https://github.com/dask/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 921292f847f66413afdcd5aa06544ddf62ac0f293a1618f83264061e0e86e7dc
+  sha256: 9e4bdc77ddb2e8a47cfd475fce8e5231823b87dc7da75c25ba73ad6c558e81cd
 
 build:
   number: 0
