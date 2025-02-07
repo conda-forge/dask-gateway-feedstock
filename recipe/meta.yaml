@@ -19,7 +19,7 @@ source:
   sha256: 23bf19f95d71f0b3c011975e55228bb1ccc45d136ef5162bee109ecb60947524
 
 build:
-  number: 0
+  number: 1
 
 
 
@@ -85,10 +85,10 @@ outputs:
         cd dask-gateway && python -m pip install . -vv --no-deps
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
         - pip
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         # Requirements below should match content of requirements.txt:
         # https://github.com/dask/dask-gateway/blob/main/dask-gateway/requirements.txt
         #
@@ -99,6 +99,8 @@ outputs:
         - pyyaml
         - tornado
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - dask_gateway
 
