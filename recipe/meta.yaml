@@ -168,22 +168,27 @@ outputs:
         - dask_gateway_server.backends.jobqueue.slurm
         - dask_gateway_server.backends.jobqueue.pbs
 
-  # server: hadoop yarn backend
-  - name: dask-gateway-server-yarn
-    build:
-      skip: true  # [target_platform == 'win-64']
-    requirements:
-      run:
-        - dask-gateway-server {{ version }}
-        # Requirements should match project.optional-dependencies for yarn:
-        # https://github.com/dask/dask-gateway/blob/main/dask-gateway-server/pyproject.toml#L42
-        #
-        - sqlalchemy >=2.0.0
-        - skein >=0.7.3
-        - protobuf <3.21
-    test:
-      imports:
-        - dask_gateway_server.backends.yarn
+  # NOTE: dask-gateway-server-yarn was removed in the 2025.2.0 release because
+  #       builds started to fail in Python 3.11+ and required maintenance in the
+  #       dependency skein.
+  #
+  #       See https://github.com/dask/dask-gateway/issues/882 for more details.
+  #
+  # # server: hadoop yarn backend
+  # - name: dask-gateway-server-yarn
+  #   build:
+  #     skip: true  # [target_platform == 'win-64']
+  #   requirements:
+  #     run:
+  #       - dask-gateway-server {{ version }}
+  #       # Requirements should match project.optional-dependencies for yarn:
+  #       # https://github.com/dask/dask-gateway/blob/main/dask-gateway-server/pyproject.toml#L42
+  #       #
+  #       - sqlalchemy >=2.0.0
+  #       - skein >=0.7.3
+  #   test:
+  #     imports:
+  #       - dask_gateway_server.backends.yarn
 
   # server: kubernetes backend
   - name: dask-gateway-server-kubernetes
