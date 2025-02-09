@@ -9,6 +9,9 @@
 #   conda-smithy rerender --commit auto
 #
 
+# https://conda-forge.org/docs/maintainer/conda_forge_yml/#conda-build-tool
+conda_build_tool: rattler-build
+
 # https://conda-forge.org/docs/maintainer/conda_forge_yml.html#conda-forge-output-validation
 conda_forge_output_validation: true
 
@@ -40,8 +43,6 @@ build_platform:
 provider:
   # build_platform: provider of ci workers
   linux_64: azure
-  # linux_aarch64 is declared as native but is probably emulated behind the
-  # scenes as its very slow running.
   linux_aarch64: azure
   osx_64: azure
   # osx_arm64 isn't available natively from any provider of CI workers yet
@@ -55,5 +56,3 @@ provider:
 # https://conda-forge.org/docs/maintainer/conda_forge_yml.html#test
 #
 test: native
-conda_build:
-  pkg_format: '2'
