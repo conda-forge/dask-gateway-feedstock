@@ -9,9 +9,6 @@
 #   conda-smithy rerender --commit auto
 #
 
-# https://conda-forge.org/docs/maintainer/conda_forge_yml.html#build-with-mambabuild
-build_with_mambabuild: true
-
 # https://conda-forge.org/docs/maintainer/conda_forge_yml.html#conda-forge-output-validation
 conda_forge_output_validation: true
 
