@@ -24,6 +24,11 @@ outputs:
   - package:
       name: dask-gateway
     build:
+      skip:
+        # FIXME: Windows should be supported, but for now it isn't because of a
+        #        failure tracked in https://github.com/conda-forge/conda-smithy/issues/2239
+        - win
+
       noarch: python
       script: |
         cd dask-gateway
