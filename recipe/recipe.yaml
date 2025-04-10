@@ -4,17 +4,18 @@
 # https://rattler.build/latest/reference/recipe_file/#spec-reference
 #
 context:
+  name: dask-gateway
   version: 2025.4.0
 
 recipe:
-  name: dask-gateway
+  name: ${{ name }}
   version: ${{ version }}
 
 source:
-  - git: https://github.com/dask/dask-gateway
-    rev: main
-  # - url: https://pypi.org/packages/source/d/dask-gateway-server/dask_gateway_server-${{ version }}.tar.gz
-  #   sha256: 0a2ea1009d35069c4b9495922e9ba4d060c3f472f2eb28350b1e6037138497a3
+  - url: https://github.com/dask/${{ name }}/archive/${{ version }}.tar.gz
+    sha256: e6c4acc597b5f6a9e4a451370a15261e84732470ef85c2f7dcb4ed4e694be281
+  # - git: https://github.com/dask/dask-gateway
+  #   rev: main
 
 build:
   number: 1
