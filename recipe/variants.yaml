@@ -16,21 +16,28 @@
 #       To learn more about this, read:
 #       https://conda-forge.org/docs/maintainer/pinning_deps.html
 #
-numpy:
-  # part of a zip_keys: python, python_impl, numpy
-  - 1.22
-  - 1.22
-  - 1.23
-  - 1.26
+python_min: 3.10
 python:
-  # part of a zip_keys: python, python_impl, numpy
-  - "3.9"
-  - "3.10"
-  - "3.11"
-  - "3.12"
+  # part of a zip_keys: python, python_impl, numpy, is_python_min
+  - 3.10.* *_cpython
+  - 3.11.* *_cpython
+  - 3.12.* *_cpython
+  - 3.13.* *_cp313
 python_impl:
-  # part of a zip_keys: python, python_impl, numpy
+  # part of a zip_keys: python, python_impl, numpy, is_python_min
   - cpython
   - cpython
   - cpython
   - cpython
+numpy:
+  # part of a zip_keys: python, python_impl, numpy, is_python_min
+  - 2
+  - 2
+  - 2
+  - 2
+is_python_min:
+  # part of a zip_keys: python, python_impl, numpy, is_python_min
+  - true
+  - false
+  - false
+  - false
