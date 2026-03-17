@@ -1,5 +1,5 @@
-About dask-gateway-server-kubernetes-feedstock
-==============================================
+About dask-gateway-feedstock
+============================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dask-gateway-feedstock/blob/main/LICENSE.txt)
 
@@ -53,6 +53,13 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dask-gateway-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7275&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dask-gateway-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -74,10 +81,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-dask--gateway--server--kubernetes-green.svg)](https://anaconda.org/conda-forge/dask-gateway-server-kubernetes) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dask-gateway-server-kubernetes.svg)](https://anaconda.org/conda-forge/dask-gateway-server-kubernetes) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dask-gateway-server-kubernetes.svg)](https://anaconda.org/conda-forge/dask-gateway-server-kubernetes) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dask-gateway-server-kubernetes.svg)](https://anaconda.org/conda-forge/dask-gateway-server-kubernetes) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-dask--gateway--server--local-green.svg)](https://anaconda.org/conda-forge/dask-gateway-server-local) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dask-gateway-server-local.svg)](https://anaconda.org/conda-forge/dask-gateway-server-local) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dask-gateway-server-local.svg)](https://anaconda.org/conda-forge/dask-gateway-server-local) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dask-gateway-server-local.svg)](https://anaconda.org/conda-forge/dask-gateway-server-local) |
 
-Installing dask-gateway-server-kubernetes
-=========================================
+Installing dask-gateway
+=======================
 
-Installing `dask-gateway-server-kubernetes` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `dask-gateway` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -163,17 +170,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating dask-gateway-server-kubernetes-feedstock
-=================================================
+Updating dask-gateway-feedstock
+===============================
 
-If you would like to improve the dask-gateway-server-kubernetes recipe or build a new
+If you would like to improve the dask-gateway recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/dask-gateway-server-kubernetes-feedstock are
+Note that all branches in the conda-forge/dask-gateway-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
