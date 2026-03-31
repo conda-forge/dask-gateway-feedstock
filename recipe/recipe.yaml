@@ -5,7 +5,7 @@
 #
 context:
   name: dask-gateway
-  version: 2025.4.0
+  version: "2026.3.0"
 
 recipe:
   name: ${{ name }}
@@ -13,12 +13,12 @@ recipe:
 
 source:
   - url: https://github.com/dask/${{ name }}/archive/${{ version }}.tar.gz
-    sha256: e6c4acc597b5f6a9e4a451370a15261e84732470ef85c2f7dcb4ed4e694be281
+    sha256: 4b0c934b5792c1fd39f0cc556831c6d9a03cbb6b03f018cc8484f644ccf3cfce
   # - git: https://github.com/dask/dask-gateway
   #   rev: main
 
 build:
-  number: 2
+  number: 0
   skip:
     # FIXME: Windows should be supported, but for now it isn't because of a
     #        failure tracked in https://github.com/conda-forge/conda-smithy/issues/2239
